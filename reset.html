@@ -1,0 +1,29 @@
+<html><head>
+<meta http-equiv=content-type content="text/html; charset=windows-1252">
+<title>Reset Your Password For Reset Test</title>
+</head>
+<body bgcolor=WHITE>
+<script>function subHandler(){var prmstr=decodeURIComponent(window.location.search.substr(1));var prmarr=prmstr.split("&");var params={};var tmparr;for(var i=0;i<prmarr.length;i++){tmparr=prmarr[i].split("=");key=tmparr.shift();value=tmparr.join("=");params[key]=value;}
+var kid=params['kid'];var username=params['username'];var time=params['time'];var nonce=params['nonce'];var sig=params['sig'];var url="/rpc/"+kid+"/"+encodeURIComponent(username)+"/user-password-reset-complete?nonce="+encodeURIComponent(nonce);url="https://baas.kinvey.com"+url+"&sig="+encodeURIComponent(sig);document.passwordresetform.action=url;return true;};</script>
+<center>
+<h1>Reset your password for Reset Test</h1>
+<br>
+<br>
+<form id=passwordresetform name=passwordresetform action=SubmitActionEndpoint onsubmit="return subHandler();" method=POST>
+<div class="field required">
+<label for=id_password>Enter new password</label>
+<input name=password id=id_password autofocus=true tabindex=1 type=password>
+</div>
+<br>
+<div class="field required">
+<label for=id_confirm>Reconfirm password</label>
+<input name=confirm id=id_confirm tabindex=2 type=password>
+</div>
+<br>
+<br>
+<div id=password_status>&nbsp;</div>
+<br>
+<input id=id_reset value="Start Over" style="font-size: 18pt" type=reset>
+<input id=id_submit value="Submit Password" style="font-size: 18pt; font-weight: bold" tabindex=3 type=submit>
+</form></center>
+</body></html>
